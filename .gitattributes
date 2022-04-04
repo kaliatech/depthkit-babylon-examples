@@ -1,0 +1,118 @@
+###############################
+# Git Line Endings            #
+###############################
+
+# Default normalize line endings to LF on checkin and
+# prevent conversion to CRLF when the file is checked out.
+*                 text eol=lf
+
+# Exceptions to default EOL handling
+*.{cmd,[cC][mM][dD]} text eol=crlf
+*.{bat,[bB][aA][tT]} text eol=crlf
+*.ps1             text eol=crlf
+
+# Diff Helpers
+*.htm             text diff=html
+*.html            text diff=html
+*.php             text diff=php
+*.py              text diff=python
+*.rb              text diff=ruby
+*.scss            text diff=css
+*.xhtml           text diff=html
+
+# Disable diff
+*.lock            text -diff
+*.map             text -diff
+package-lock.json text -diff
+
+###############################
+# LFS support (optional)      #
+###############################
+# If using, best to do it at beginning
+# of a project before any LFS files added.
+
+# Macro for files that should use Git LFS.
+#[attr]lfs -text filter=lfs diff=lfs merge=lfs
+
+
+
+###############################
+# Binary
+###############################
+# Explicit examples here as a convenience
+# if LFS were to be used. In that case,
+# would switch from 'binary' to 'lfs'.
+
+# 3D
+*.glb             lfs
+
+# Graphics
+*.ai              lfs
+*.bmp             lfs
+*.eps             lfs
+*.gif             lfs
+*.gifv            lfs
+*.ico             lfs
+*.jng             lfs
+*.jp2             lfs
+*.jpg             lfs
+*.jpeg            lfs
+*.jpx             lfs
+*.jxr             lfs
+*.pdf             lfs
+*.png             lfs
+*.psb             lfs
+*.psd             lfs
+# *.svg           lfs
+*.svgz            lfs
+*.tif             lfs
+*.tiff            lfs
+*.wbmp            lfs
+*.webp            lfs
+
+# Audio
+*.kar             lfs
+*.m4a             lfs
+*.mid             lfs
+*.midi            lfs
+*.mp3             lfs
+*.ogg             lfs
+*.ra              lfs
+
+# Video
+*.3gpp            lfs
+*.3gp             lfs
+*.as              lfs
+*.asf             lfs
+*.asx             lfs
+*.fla             lfs
+*.flv             lfs
+*.m4v             lfs
+*.mng             lfs
+*.mov             lfs
+*.mp4             lfs
+*.mpeg            lfs
+*.mpg             lfs
+*.ogv             lfs
+*.swc             lfs
+*.swf             lfs
+*.webm            lfs
+
+# Archives
+*.7z              lfs
+*.gz              lfs
+*.jar             lfs
+*.rar             lfs
+*.tar             lfs
+*.zip             lfs
+
+# Fonts
+*.ttf             lfs
+*.eot             lfs
+*.otf             lfs
+*.woff            lfs
+*.woff2           lfs
+
+# Executables
+*.exe             lfs
+*.pyc             lfs
