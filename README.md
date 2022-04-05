@@ -18,7 +18,7 @@ https://kaliatech.github.io/depthkit-babylon-examples/dist
 
 Remaining issues:
 
- - In Safari (OSX and iOS), upon play the video texture does black.
+ - In Safari (OS X and iOS), upon play, the video texture goes black.
  - The shader was only half ported from [previous work](https://github.com/ScatterCo/Depthkit.js) and needs to be completed/fixed. There are errors in the current shader code that cause artifacts and wrong perspective correction.
  - The current code does not setup valid and efficient vertex/index buffers. It's currently hard coded for sample data.
 
