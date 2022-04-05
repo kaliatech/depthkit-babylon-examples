@@ -36,7 +36,8 @@ main.render-canvas-cont {
   bottom: 0px;
   height: 100%;
   width: 100%;
-  border: 2px solid red;
+  /*border: 2px solid red;*/
+  outline: none;
   min-height: 5rem;
   min-width: 5rem;
 }

@@ -32,7 +32,7 @@ package-lock.json text -diff
 # of a project before any LFS files added.
 
 # Macro for files that should use Git LFS.
-#[attr]lfs -text filter=lfs diff=lfs merge=lfs
+[attr]lfs -text filter=lfs diff=lfs merge=lfs
 
 
 

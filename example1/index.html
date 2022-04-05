@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link href="/favicon.ico" rel="icon" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Example 1 - DepthKit with Babylon.js</title>
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>Example 1 - DepthKit 3D Scene</h1>
+  </header>
+  <main class="render-canvas-cont">
+    <canvas class="render-canvas" id="renderCanvas"></canvas>
+  </main>
+</div>
+<link href="../style/main.css" rel="stylesheet" type="text/css">
+<script lang="typescript" type="module">
+  import { Example1 } from "./example1.ts"
+
+  const renderCanvas = document.getElementById('renderCanvas')
+  const example1 = new Example1(renderCanvas, window)
+  example1.init()
+</script>
+</body>
+</html>
