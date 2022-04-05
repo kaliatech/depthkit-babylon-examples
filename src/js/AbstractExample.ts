@@ -1,41 +1,56 @@
-import { Engine } from '@babylonjs/core/Engines/engine.js'
-import { ArcRotateCamera } from '@babylonjs/core/Cameras/arcRotateCamera.js'
+import { Engine } from '@babylonjs/core/Engines/engine'
+import { ArcRotateCamera } from '@babylonjs/core/Cameras/arcRotateCamera'
 import { AxesViewer } from '@babylonjs/core/Debug/axesViewer'
 import { Vector3 } from '@babylonjs/core/Maths/math.vector'
 import { HemisphericLight } from '@babylonjs/core/Lights/hemisphericLight'
-import { Scene } from '@babylonjs/core/scene.js'
-import { Color4, Tools } from '@babylonjs/core'
-import { Color3 } from '@babylonjs/core/Maths/math.color.js'
+import { Scene } from '@babylonjs/core/scene'
+import { Tools } from '@babylonjs/core/Misc'
+import { Color3, Color4 } from '@babylonjs/core/Maths/math.color'
 
 export abstract class AbstractExample {
 
   protected engine: Engine
-  protected scene?: Scene
+  protected scene: Scene
 
   private onResizeHandle = this.onResize.bind(this)
 
   protected constructor(protected canvas: HTMLCanvasElement, protected window?: Window) {
     this.engine = new Engine(canvas, true, {}, true)
-  }
-
-  init() {
-    this.window?.addEventListener('resize', this.onResizeHandle)
 
     this.scene = new Scene(this.engine)
     this.scene.clearColor = Color4.FromColor3(Color3.Black())
-    // Add a camera
+
+    this.window?.addEventListener('resize', this.onResizeHandle)
+
+    // void Promise.all([
+    //   import('@babylonjs/core/Legacy/legacy'),
+    //   import('@babylonjs/core/Debug/debugLayer'),
+    //   import('@babylonjs/inspector'),
+    // ]).then(() =>
+    //   this.scene.debugLayer.show({
+    //     handleResize: true,
+    //     embedMode: true,
+    //     overlay: true,
+    //   }),
+    // )
+  }
+
+  init() {
+    // // Add a camera
     const camera = new ArcRotateCamera(
       'Camera',
       Tools.ToRadians(-75),
       Tools.ToRadians(85),
-      5,
-      new Vector3(0, 1, 0),
+      10,
+      new Vector3(0, 3, 0),
       this.scene
     )
+    camera.wheelPrecision = 25.0
+    // const camera = new FlyCamera('Camera', new Vector3(0, 0, -2), this.scene)
     camera.attachControl(true)
 
     // Add light
-    const light = new HemisphericLight('light1', new Vector3(0, 2, 0), this.scene)
+    const light = new HemisphericLight('light1', new Vector3(0, 6, 0), this.scene)
     light.intensity = 0.7
 
     // Add axes viewer with 1 unit lengths

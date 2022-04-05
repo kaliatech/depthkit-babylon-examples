@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import { resolve } from 'path'
+import glsl from 'vite-plugin-glsl'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -12,6 +13,7 @@ export default defineConfig({
       }
     }
   },
+  plugins: [glsl()],
   server: {
     port: 3543,
     https: true,

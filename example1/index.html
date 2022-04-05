@@ -10,6 +10,9 @@
 <div id="app">
   <header>
     <h1>Example 1 - DepthKit 3D Scene</h1>
+    <div>
+      <button id="playBtn">PLAY</button>
+    </div>
   </header>
   <main class="render-canvas-cont">
     <canvas class="render-canvas" id="renderCanvas"></canvas>
@@ -22,6 +25,32 @@
   const renderCanvas = document.getElementById('renderCanvas')
   const example1 = new Example1(renderCanvas, window)
   example1.init()
+  window.e1 = example1 // for console debugging
+
+  let isPlaying = false
+
+  const btn = document.getElementById('playBtn')
+
+  function togglePlay() {
+    if (isPlaying) {
+      example1.pause()
+      btn.innerText = "PLAY"
+    } else {
+      example1.play()
+      btn.innerText = "PAUSE"
+    }
+    isPlaying = !isPlaying
+  }
+
+  btn.addEventListener('click', () => {
+    togglePlay()
+  })
+
+  document.addEventListener('keydown', (e) => {
+    if (e.target !== btn && e.code === "Space") {
+      togglePlay()
+    }
+  })
 </script>
 </body>
 </html>
