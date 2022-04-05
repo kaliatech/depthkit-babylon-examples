@@ -37,7 +37,7 @@ export class Example1 extends AbstractExample {
 
     //TODO: need a better way
     const propsUrl = '../assets/john/John.txt'
-    const mediaUrl = '../assets/john/John.mp4'
+    const mediaUrl = '../assets/john/John2.mp4'
 
     this.depthKit = new DepthKit(this.scene, 'example1')
 
