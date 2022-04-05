@@ -37,7 +37,12 @@ export class Example1 extends AbstractExample {
 
     //TODO: need a better way
     const propsUrl = '../assets/john/John.txt'
-    const mediaUrl = '../assets/john/John2.mp4'
+    //const mediaUrl = '../assets/john/John2.mp4'
+
+    // Github pages does not work with LFS:
+    // https://github.com/git-lfs/git-lfs/issues/1342
+    // Temporary workaround:
+    const mediaUrl = 'https://media.githubusercontent.com/media/kaliatech/depthkit-babylon-examples/main/dist/assets/john/John2.mp4'
 
     this.depthKit = new DepthKit(this.scene, 'example1')
 
