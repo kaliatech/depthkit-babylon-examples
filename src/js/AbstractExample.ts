@@ -67,7 +67,6 @@ export abstract class AbstractExample {
   }
 
   protected onResize() {
-    console.log('onResize')
     this.engine.resize(true)
   }
 }

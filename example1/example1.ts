@@ -35,9 +35,9 @@ export class Example1 extends AbstractExample {
       skyboxColor: Color3.Black()
     }, this.scene)
 
-
-    const propsUrl = '/assets/john/John.txt'
-    const mediaUrl = '/assets/john/John.mp4'
+    //TODO: need a better way
+    const propsUrl = '../assets/john/John.txt'
+    const mediaUrl = '../assets/john/John.mp4'
 
     this.depthKit = new DepthKit(this.scene, 'example1')
 
