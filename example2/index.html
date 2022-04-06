@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link href="/favicon.ico" rel="icon" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Example 2 - DepthKit in WebXR</title>
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>Example 2 - DepthKit WebXR Scene</h1>
+    <div>
+      <button id="playBtn">PLAY</button>
+    </div>
+  </header>
+  <main class="render-canvas-cont">
+    <canvas class="render-canvas" id="renderCanvas"></canvas>
+  </main>
+</div>
+<link href="../style/main.css" rel="stylesheet" type="text/css">
+<script lang="typescript" type="module">
+  import { Example2 } from "./example2.ts"
+
+  const renderCanvas = document.getElementById('renderCanvas')
+  const example2 = new Example2(renderCanvas, window)
+  example2.init()
+
+  let isPlaying = false
+
+  const btn = document.getElementById('playBtn')
+
+  function togglePlay() {
+    if (isPlaying) {
+      example2.pause()
+      btn.innerText = "PLAY"
+    } else {
+      example2.play()
+      btn.innerText = "PAUSE"
+    }
+    isPlaying = !isPlaying
+  }
+
+  btn.addEventListener('click', () => {
+    togglePlay()
+  })
+
+  document.addEventListener('keydown', (e) => {
+    if (e.target !== btn && e.code === "Space") {
+      togglePlay()
+    }
+  })
+</script>
+</body>
+</html>

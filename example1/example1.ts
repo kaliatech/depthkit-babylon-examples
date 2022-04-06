@@ -11,6 +11,8 @@ export class Example1 extends AbstractExample {
 
   private depthKit?: DepthKit
 
+  protected envHelper?:EnvironmentHelper
+
   constructor(canvas: HTMLCanvasElement, window?: Window) {
     super(canvas, window)
   }
@@ -28,7 +30,7 @@ export class Example1 extends AbstractExample {
     // rMat.diffuseColor = new Color3(1.0, 0, 0)
     // sphere.material = rMat
 
-    new EnvironmentHelper({
+    this.envHelper = new EnvironmentHelper({
       createSkybox: true,
       skyboxColor: Color3.Black()
     }, this.scene)

@@ -21,7 +21,6 @@ export class DepthKit {
 
   constructor(private scene: Scene, private id: string = 'depthkit') {
 
-
   }
 
   /**
@@ -48,10 +47,10 @@ export class DepthKit {
     vertexMesh.material = this.dkShaderMat
 
     // TODO: How best to apply default sizing/scaling/positioning?
-    vertexMesh.scaling = new Vector3(3, 3, 3)
+    vertexMesh.scaling = new Vector3(1, 1, 1)
     vertexMesh.rotate(Vector3.Forward(), Math.PI / 2)
-    vertexMesh.position.y = 6.25
-    this.dkMeshRoot.position.z = -((this.props.farClip - this.props.nearClip) / 2.0) - this.props.nearClip
+    vertexMesh.position.y = 2
+    this.dkMeshRoot.position.z = ((this.props.farClip - this.props.nearClip) / 2.0) - this.props.nearClip
   }
 
   setMeshScalar(_scalar: 0 | 1 | 2 | 3) {

@@ -26,6 +26,13 @@ header button {
   padding:0.5rem;
 }
 
+li {
+  margin: 1rem;
+}
+
+li a {
+  color:white;
+}
 
 main.render-canvas-cont {
   display: flex;

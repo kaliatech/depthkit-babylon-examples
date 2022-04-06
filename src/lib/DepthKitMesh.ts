@@ -58,7 +58,7 @@ export class DepthKitMesh extends TransformNode {
 
 
     //TODO: This is temporary hack to avoid manual vertex and index creation
-    mesh.increaseVertices(vertsWide)
+    mesh.increaseVertices(250)
 
     // SAFARI - WIP: This verifies that the video texture loads and plays
     // const tMat = new StandardMaterial('test', this.scene)

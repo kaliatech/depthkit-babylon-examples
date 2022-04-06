@@ -41,8 +41,8 @@ export abstract class AbstractExample {
       'Camera',
       Tools.ToRadians(-75),
       Tools.ToRadians(85),
-      10,
-      new Vector3(0, 3, 0),
+      3,
+      new Vector3(0, 1, 0),
       this.scene
     )
     camera.wheelPrecision = 25.0
