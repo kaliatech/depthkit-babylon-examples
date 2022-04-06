@@ -1,4 +1,4 @@
-# WebXR-Vite-Babylon-Simple
+# Depthkit Examples with Babylon.js
 
 Examples for visualising [Scatter Depthkit](https://www.scatter.nyc/depthkit) volumetric captures using Babylon.js in WebGL.
 
